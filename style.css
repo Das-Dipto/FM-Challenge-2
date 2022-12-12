@@ -65,9 +65,10 @@ body{
     font-size: 1rem;
 }
 
-.data h1{
+.data h1, .total-bill{
     color:hsl(172, 67%, 45%);
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 .button-class{
