@@ -4,7 +4,7 @@ let totalAmount = document.querySelector('.total-bill');
 let tipAmount = document.querySelector('.tip-amount');
 let percentage = document.querySelectorAll('.percentage');
 let prc = document.querySelectorAll('.pr');
-
+let convert = 0;
 let num = 0;
 let pep = 0;
 let k = 1;
@@ -23,6 +23,7 @@ const billMuliplier = (a, z) =>{
        }
        totalAmount.innerHTML = `$ ${parseFloat(num1*num2).toFixed(2)}`;
        temp = parseFloat(num1*num2).toFixed(2);
+
 
        percentage.forEach((item, index)=>{
         item.addEventListener("click", ()=>{
@@ -46,14 +47,15 @@ const billMuliplier = (a, z) =>{
                tip = temp * 0.50;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
            }
-     
-    
+           else{
+            prc[5].addEventListener("keyup", ()=>{
+               convert = prc[5].value / 100;
+               tip = temp * convert;
+               tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+            })
+           }  
         })
       })
-    
-    
-     
-    //    console.log(`The bill is ${num1} * ${num2} = ${parseFloat(num1*num2).toFixed(2)}`);
 }
 
 bill.addEventListener('keyup', ()=>{
