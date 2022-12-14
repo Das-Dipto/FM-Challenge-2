@@ -95,9 +95,20 @@ button{
     margin: 0 auto;
 }
 
+.people{
+    display: flex;
+    justify-content: space-between;
+}
+
 label{
     font-size: 0.8rem;
     font-weight: 600;
+}
+
+.display{
+    visibility: hidden;
+    color:red;
+    transition: 0.10s all ease-in-out;
 }
 
 .input{
@@ -141,6 +152,14 @@ label{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+}
+
+.tip .hover:hover, .right .hover:hover{
+    background-color:hsl(185, 41%, 84%);
+}
+
+.tip .hover:hover h2{
+    color:hsl(183, 100%, 15%);
 }
 
 .tip .percentage{

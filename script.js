@@ -4,6 +4,8 @@ let totalAmount = document.querySelector('.total-bill');
 let tipAmount = document.querySelector('.tip-amount');
 let percentage = document.querySelectorAll('.percentage');
 let prc = document.querySelectorAll('.pr');
+let display = document.querySelector('.display');
+let reset = document.querySelector('.reset-button');
 let convert = 0;
 let num = 0;
 let pep = 0;
@@ -65,9 +67,31 @@ bill.addEventListener('keyup', ()=>{
 })
 
 people.addEventListener('keyup', ()=>{
-    pep = people.value;
-    billMuliplier(pep);
+    pep = Math.floor(people.value);
+
+    if ( pep == 0){
+        display.style.visibility = 'visible';
+        people.style.border = `2px solid red`;
+    }
+
+    else{
+        display.style.visibility = ``;
+        people.style.border = ``;
+        billMuliplier(pep);
+    }
 })
+
+reset.addEventListener('click', ()=>{
+    totalAmount.innerHTML = `$ 0.00`;
+    tipAmount.innerHTML = `$ 0.00`;
+    bill.value = ``;
+    people.value = ``;
+    prc[5].value = ``;
+})
+
+
+
+
 
 
 
