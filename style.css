@@ -156,6 +156,7 @@ label{
 
 .tip .hover:hover, .right .hover:hover{
     background-color:hsl(185, 41%, 84%);
+    color: black;
 }
 
 .tip .hover:hover h2{
@@ -204,6 +205,10 @@ label{
 
 .form-2 input::placeholder{
     margin-right: 0.50rem;
+}
+
+.reset-button:disabled{
+    background-color: hsl(186, 14%, 43%); 
 }
 
 

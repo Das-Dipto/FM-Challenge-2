@@ -63,12 +63,12 @@ const billMuliplier = (a, z) =>{
 bill.addEventListener('keyup', ()=>{
     num = bill.value;
     i = true;
+    reset.disabled = false;
     billMuliplier(num, i);
 })
 
 people.addEventListener('keyup', ()=>{
     pep = Math.floor(people.value);
-
     if ( pep == 0){
         display.style.visibility = 'visible';
         people.style.border = `2px solid red`;
@@ -78,6 +78,7 @@ people.addEventListener('keyup', ()=>{
         display.style.visibility = ``;
         people.style.border = ``;
         billMuliplier(pep);
+        reset.disabled = false;
     }
 })
 
@@ -86,7 +87,10 @@ reset.addEventListener('click', ()=>{
     tipAmount.innerHTML = `$ 0.00`;
     bill.value = ``;
     people.value = ``;
+    display.style.visibility = ``;
+    people.style.border = ``;
     prc[5].value = ``;
+    reset.disabled = true;
 })
 
 
