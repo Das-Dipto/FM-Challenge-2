@@ -12,16 +12,6 @@ let k, num1, num2;
 convert = num = pep = temp = tip = 0;
 k = num1 = num2 = 1;
 
-// let convert = 0;
-// let num = 0;
-// let pep = 0;
-// let temp = 0;
-// let tip = 0;
-// let k = 1;
-// let num1 =1;
-// let num2 =1;
-// let i = false;
-
 const arr = ["5%", "10%", "15%", "25%", "50%"];
 
 const billMuliplier = (a, z, n) =>{
@@ -83,7 +73,7 @@ people.addEventListener('keyup', ()=>{
     if ( pep == 0){
         display.style.visibility = 'visible';
         people.style.border = `2px solid red`;
-        billMuliplier(0, true);
+        billMuliplier(0, false);
     }
 
     else{
