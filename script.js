@@ -6,22 +6,34 @@ let percentage = document.querySelectorAll('.percentage');
 let prc = document.querySelectorAll('.pr');
 let display = document.querySelector('.display');
 let reset = document.querySelector('.reset-button');
-let convert = 0;
-let num = 0;
-let pep = 0;
-let k = 1;
 let i = false;
-let num1 =1;
-let num2 =1;
-let temp = 0;
-let tip = 0;
+let convert, num, pep, temp, tip;
+let k, num1, num2;
+convert = num = pep = temp = tip = 0;
+k = num1 = num2 = 1;
+
+// let convert = 0;
+// let num = 0;
+// let pep = 0;
+// let temp = 0;
+// let tip = 0;
+// let k = 1;
+// let num1 =1;
+// let num2 =1;
+// let i = false;
+
 const arr = ["5%", "10%", "15%", "25%", "50%"];
-const billMuliplier = (a, z) =>{
-       if ( i == z){
-        num1 = a;
+
+const billMuliplier = (a, z, n) =>{
+       if ( z ){
+            num1 = a;
+       }
+       else if (n == true){
+            num1 = 0;
+            num2 = 0;
        }
        else{
-        num2 = a;
+            num2 = a;
        }
        totalAmount.innerHTML = `$ ${parseFloat(num1*num2).toFixed(2)}`;
        temp = parseFloat(num1*num2).toFixed(2);
@@ -62,9 +74,8 @@ const billMuliplier = (a, z) =>{
 
 bill.addEventListener('keyup', ()=>{
     num = bill.value;
-    i = true;
     reset.disabled = false;
-    billMuliplier(num, i);
+    billMuliplier(num, true);
 })
 
 people.addEventListener('keyup', ()=>{
@@ -72,9 +83,11 @@ people.addEventListener('keyup', ()=>{
     if ( pep == 0){
         display.style.visibility = 'visible';
         people.style.border = `2px solid red`;
+        billMuliplier(0, true);
     }
 
     else{
+        i = false
         display.style.visibility = ``;
         people.style.border = ``;
         billMuliplier(pep);
@@ -91,6 +104,7 @@ reset.addEventListener('click', ()=>{
     people.style.border = ``;
     prc[5].value = ``;
     reset.disabled = true;
+    billMuliplier(null, null, true);
 })
 
 
