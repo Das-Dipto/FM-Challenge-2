@@ -25,9 +25,8 @@ const billMuliplier = (a, z, n) =>{
        else{
             num2 = a;
        }
-       totalAmount.innerHTML = `$ ${parseFloat(num1*num2).toFixed(2)}`;
-       temp = parseFloat(num1*num2).toFixed(2);
-
+       totalAmount.innerHTML = `$ ${parseFloat(num1 / num2).toFixed(2)}`;
+       temp = parseFloat(num1 / num2).toFixed(2);
 
        percentage.forEach((item, index)=>{
         item.addEventListener("click", ()=>{
