@@ -20,7 +20,10 @@ const billMuliplier = (a, z, n) =>{
        }
        else if (n == true){
             num1 = 0;
-            num2 = 0;
+            num2 = 1;
+       }
+       else if (a == 0){
+            num2 = 1;
        }
        else{
             num2 = a;
@@ -33,28 +36,34 @@ const billMuliplier = (a, z, n) =>{
            if (prc[index].innerHTML == arr[0]){
                tip = temp * 0.05;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+               totalAmount.innerHTML = `$ ${parseFloat((num1 / num2) + tip).toFixed(2)}`;
            }
            else if (prc[index].innerHTML == arr[1]){
                tip = temp * 0.10;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+               totalAmount.innerHTML = `$ ${parseFloat((num1 / num2) + tip).toFixed(2)}`;
            }
            else if (prc[index].innerHTML == arr[2]){
                tip = temp * 0.15;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+               totalAmount.innerHTML = `$ ${parseFloat((num1 / num2) + tip).toFixed(2)}`;
            }
            else if (prc[index].innerHTML == arr[3]){
                tip = temp * 0.25;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+               totalAmount.innerHTML = `$ ${parseFloat((num1 / num2) + tip).toFixed(2)}`;
            }
            else if (prc[index].innerHTML == arr[4]){
                tip = temp * 0.50;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+               totalAmount.innerHTML = `$ ${parseFloat((num1 / num2) + tip).toFixed(2)}`;
            }
            else{
             prc[5].addEventListener("keyup", ()=>{
                convert = prc[5].value / 100;
                tip = temp * convert;
                tipAmount.innerHTML = `$ ${parseFloat(tip).toFixed(2)}`;
+               totalAmount.innerHTML = `$ ${parseFloat((num1 / num2) + tip).toFixed(2)}`;
             })
            }  
         })
